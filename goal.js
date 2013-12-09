@@ -1,1 +1,6 @@
-var Goal;
+var Goal = function(title, percentageComplete) {
+
+	
+
+};
+
