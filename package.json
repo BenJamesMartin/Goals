@@ -2,6 +2,6 @@
 	"name"	 			: "goals",
 	"version"			: "0.1",
 	"dependencies": {
-
+		"moment": "~2.4"
 	}
 }

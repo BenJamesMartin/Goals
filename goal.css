@@ -8,7 +8,7 @@ body {
 	background-color:#eee;
 }
 
-.goal {
+.goal-container {
 	width:300px;
 	margin:30px;
 	height: 30px;
@@ -20,7 +20,7 @@ body {
 
 }
 
-.progress {
+.goal-progress {
 	width:150px;
 	position:relative;
 	top:-1px;
@@ -29,4 +29,5 @@ body {
 	border-radius: 16px;
 	background: linear-gradient(to bottom, #DEF7CE 0%,#95AD88 100%);
 	box-shadow:0px 1px 1px #333;
+	cursor:pointer;
 }
