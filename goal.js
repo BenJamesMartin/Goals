@@ -6,18 +6,16 @@
 		// Make an h1 with goal name
 		// Make green become more intense as goal becomes completed
 
-	// <h1 class="goal-title"></h1>
-		
-	// 	<div class="goal"> 
-	// 		<div class="progress" id="progress"></div>
-	// 	</div>
-
 		var goalTitle = document.createElement('h1');
 		goalTitle.setAttribute('class', 'goal-title');
-		goalTitle.innerHTML
+		goalTitle.innerHTML = title;
 
 		var goalContainer = document.createElement('div');
-		title.setAttribute('class', 'goal-container');
+		goalContainer.setAttribute('class', 'goal-container');
+
+		var progressContainer = document.createElement('div');
+		progressContainer.setAttribute('class', 'progress-container');
+		progressContainer.style.width = 300*percentageComplete + 'px';
 
 
 	};

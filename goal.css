@@ -2,15 +2,23 @@
 	margin:0;
 	padding:0;
 	border:0;
+	color:#333;
 }
 
 body {
 	background-color:#eee;
 }
 
+.goal-title {
+	font-size:2em;
+	font-weight: 100;
+	font-family:"Helvetica Neue";
+	text-align: center;
+}
+
 .goal-container {
 	width:300px;
-	margin:30px;
+	margin:10px auto;
 	height: 30px;
 	opacity:0.5;
 	border:1px solid white;
