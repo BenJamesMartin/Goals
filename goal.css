@@ -6,15 +6,19 @@
 }
 
 body {
-	background-color:#eee;
+	background-color:#eee;	
+}
+
+.goal-title, .subgoal {
+	font-family:"Helvetica Neue";
+	text-align: center;
 }
 
 .goal-title {
 	margin-top:30px;
 	font-size:2em;
 	font-weight: 100;
-	font-family:"Helvetica Neue";
-	text-align: center;
+	
 }
 
 .goal-container {
@@ -39,4 +43,10 @@ body {
 	background: linear-gradient(to bottom, #DEF7CE 0%,#95AD88 100%);
 	box-shadow:0px 1px 1px #333;
 	cursor:pointer;
+}
+
+.subgoal {
+	text-align:center;
+	font-size: 1.5em;
+	font-weight:300;
 }

@@ -3,11 +3,7 @@
 	// Returns a goal 
 	var Goal = function(title, percentageComplete, shouldAppend) {
 
-		// Make div and append to page with proper width based on percentage
-		// Make an h1 with goal name
-		// Make green become more intense as goal becomes completed
-
-		var goalWrapper = document.createElement('div');
+		this.goalWrapper = document.createElement('div');
 
 		// Create title area for percentage complete
 
@@ -22,31 +18,46 @@
 		progressContainer.setAttribute('class', 'goal-progress');
 		progressContainer.style.width = 300*percentageComplete + 'px';
 
-		goalWrapper.appendChild(goalTitle);
-		goalWrapper.appendChild(goalContainer);
+		this.goalWrapper.appendChild(goalTitle);
+		this.goalWrapper.appendChild(goalContainer);
 		goalContainer.appendChild(progressContainer);
 
 		if (shouldAppend) {
-			document.body.appendChild(goalWrapper);
+			document.body.appendChild(this.goalWrapper);
 		}
 
 		else {
-			return goalWrapper;
+			return this.goalWrapper;
 		}
 
 	};
 
-	var goal = new Goal('Work at Medium', 0.7, true);
-	var goa2 = new Goal('Gym Consistency', 0.03, true);
+	Goal.prototype.subgoals = function(subgoals) {
 
-	// document.body.appendChild(goal);
+		if (!Array.isArray(subgoals)) {
+			throw('Subgoals must be an array');
+		}
+
+		var headings = [];
+
+		for (var i = 0; i < subgoals.length; i++) {
+			headings.push(document.createElement('h3'));
+			headings[i].setAttribute('class', 'subgoal');
+			headings[i].innerHTML = subgoals[i];
+			this.goalWrapper.appendChild(headings[i]);
+		}
+
+	};
+
+	var goal  = new Goal('Work at Medium', 0.7, true);
+	var goal2 = new Goal('Gym Consistency', 0.03, true);
+
+	goal.subgoals(['xyz', 'blah']);
 
 
 
 	window.onload = function(){
-
 		// enableDrag();
-
 	};
 
 	var enableDrag = function(){
