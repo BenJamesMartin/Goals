@@ -4,8 +4,7 @@
 	var Goal = function(title, percentageComplete, shouldAppend) {
 
 		this.goalWrapper = document.createElement('div');
-
-		// Create title area for percentage complete
+		this.goalWrapper.setAttribute('class', 'goal-wrapper');
 
 		var goalTitle = document.createElement('h1');
 		goalTitle.setAttribute('class', 'goal-title');
@@ -44,7 +43,8 @@
 			headings.push(document.createElement('h3'));
 			headings[i].setAttribute('class', 'subgoal');
 			headings[i].innerHTML = subgoals[i];
-			this.goalWrapper.appendChild(headings[i]);
+			// Insert subgoals after goal title and before goal bar
+			this.goalWrapper.insertBefore(headings[i], this.goalWrapper.children[1])
 		}
 
 	};
@@ -54,10 +54,8 @@
 
 	goal.subgoals(['xyz', 'blah']);
 
-
-
 	window.onload = function(){
-		// enableDrag();
+		// enableDrag();	
 	};
 
 	var enableDrag = function(){

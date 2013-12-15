@@ -9,6 +9,11 @@ body {
 	background-color:#eee;	
 }
 
+.goal-wrapper {
+	width:350px;
+	margin:0 auto;
+}
+
 .goal-title, .subgoal {
 	font-family:"Helvetica Neue";
 	text-align: center;
@@ -46,7 +51,8 @@ body {
 }
 
 .subgoal {
-	text-align:center;
-	font-size: 1.5em;
-	font-weight:300;
+	text-align:left;
+	margin-left: 50px;
+	font-size: 1.3em;
+	font-weight:100;
 }
