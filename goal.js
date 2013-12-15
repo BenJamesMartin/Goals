@@ -42,20 +42,22 @@
 		for (var i = 0; i < subgoals.length; i++) {
 			headings.push(document.createElement('h3'));
 			headings[i].setAttribute('class', 'subgoal');
-			headings[i].innerHTML = subgoals[i];
+			headings[i].innerHTML = ' &middot; ' + subgoals[i];
 			// Insert subgoals after goal title and before goal bar
-			this.goalWrapper.insertBefore(headings[i], this.goalWrapper.children[1])
+			this.goalWrapper.insertBefore(headings[i], this.goalWrapper.children[1]);
 		}
 
 	};
 
-	var goal  = new Goal('Work at Medium', 0.7, true);
-	var goal2 = new Goal('Gym Consistency', 0.03, true);
+	var workAtMedium   = new Goal('Work at Legit Place', 0.7, true);
+	var gymConsistency = new Goal('Gym Consistency', 0.03, true);
 
-	goal.subgoals(['xyz', 'blah']);
+	workAtMedium.subgoals(['xyz', 'blah']);
+	gymConsistency.subgoals(['Go to the gym every Monday, Wednesday, and Friday for one year.']);
+
 
 	window.onload = function(){
-		// enableDrag();	
+		// enableDrag();
 	};
 
 	var enableDrag = function(){
