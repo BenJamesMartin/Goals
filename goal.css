@@ -10,6 +10,7 @@ body {
 }
 
 .goal-title {
+	margin-top:30px;
 	font-size:2em;
 	font-weight: 100;
 	font-family:"Helvetica Neue";

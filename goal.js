@@ -1,7 +1,7 @@
 (function(){
 
 	// Returns a goal 
-	var Goal = function(title, percentageComplete) {
+	var Goal = function(title, percentageComplete, shouldAppend) {
 
 		// Make div and append to page with proper width based on percentage
 		// Make an h1 with goal name
@@ -9,10 +9,11 @@
 
 		var goalWrapper = document.createElement('div');
 
+		// Create title area for percentage complete
 
 		var goalTitle = document.createElement('h1');
 		goalTitle.setAttribute('class', 'goal-title');
-		goalTitle.innerHTML = title;
+		goalTitle.innerHTML = title + ' - ' + percentageComplete*100 + '%';
 
 		var goalContainer = document.createElement('div');
 		goalContainer.setAttribute('class', 'goal-container');
@@ -25,13 +26,20 @@
 		goalWrapper.appendChild(goalContainer);
 		goalContainer.appendChild(progressContainer);
 
-		return goalWrapper;
+		if (shouldAppend) {
+			document.body.appendChild(goalWrapper);
+		}
+
+		else {
+			return goalWrapper;
+		}
 
 	};
 
-	var goal = new Goal('Work at Medium', 0.7);
+	var goal = new Goal('Work at Medium', 0.7, true);
+	var goa2 = new Goal('Gym Consistency', 0.03, true);
 
-	document.body.appendChild(goal);
+	// document.body.appendChild(goal);
 
 
 
